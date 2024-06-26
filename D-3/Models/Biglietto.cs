@@ -1,12 +1,20 @@
-﻿namespace D_3.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace D_3.Models
 {
     public class Biglietto
     {
-   public string Nome { get; set; } 
-    public string Cognome { get; set; }
+        [Required(ErrorMessage ="il nome è obbligatorio")]
+    public string Nome { get; set; }
 
-    public string Sala { get; set; }
-    public string Tipo  { get; set; }
+
+        [Required(ErrorMessage = "Il cognome è obbligatorio.")]
+        public string Cognome { get; set; }
+        [Required(ErrorMessage = "Seleziona una sala.")]
+        public string Sala { get; set; }
+
+        [Required(ErrorMessage = "Seleziona un tipo di biglietto.")]
+        public string Tipo  { get; set; }
 
 
 
