@@ -55,6 +55,7 @@ namespace D_3.Controllers
             return View(biglietto); // Passa il modello alla vista
         }
 
+
         /// /////////////////////////////////////////////////////////////////////
 
         public IActionResult Index()
@@ -62,6 +63,15 @@ namespace D_3.Controllers
             var sale = CinemaData.Sale ?? new List<Sala>();
             return View(sale);
         }
+
+        public IActionResult Riepilogo()
+        {
+            var biglietti = CinemaData.Sale?.SelectMany(s => s.BigliettiVenduti).ToList() ?? new List<Biglietto>();
+            return View(biglietti);
+        }
+
+
+
 
 
         public IActionResult Privacy()
