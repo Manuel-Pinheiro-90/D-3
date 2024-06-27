@@ -38,7 +38,10 @@ namespace D_3.Controllers
                     if (sala.BigliettiTotali < sala.CapienzaMassima)
                     {
                         sala.BigliettiVenduti.Add(biglietto);
-                        ViewBag.Message = "Biglietto venduto con successo!";
+                       
+                       TempData["Message"] = "Biglietto venduto con successo!";
+
+
                     }
                     else
                     {
@@ -47,10 +50,7 @@ namespace D_3.Controllers
                 }
                
             }
-            else
-            {
-                ViewBag.Message = "Per favore, compila correttamente tutti i campi.";
-            }
+          
 
             return View(biglietto); // Passa il modello alla vista
         }
